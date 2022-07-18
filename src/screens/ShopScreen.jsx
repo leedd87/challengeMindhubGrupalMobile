@@ -1,16 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 
-const HomeScreen = () => {
+const ShopScreen = () => {
 	return (
 		<View>
-			<Text>HomeScreen</Text>
-			<StatusBar style="auto" />
+			<Text>ShopScreen</Text>
 		</View>
 	);
 };
 
-export default HomeScreen;
+export default ShopScreen;
 
 const styles = StyleSheet.create({});
