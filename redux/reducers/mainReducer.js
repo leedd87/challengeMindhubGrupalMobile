@@ -1,5 +1,8 @@
 import { combineReducers } from "redux";
+import shoesReducer from "./shoesReducer";
 
-const mainReducer = combineReducers({});
+const mainReducer = combineReducers({
+	shoesReducer,
+});
 
 export default mainReducer;

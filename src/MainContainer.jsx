@@ -50,6 +50,7 @@ const MainContainer = () => {
 						if (routeName === "DAFTLAB") {
 							iconName = focused ? "home" : "home-outline";
 						} else if (routeName === "MyShop") {
+							// iconName = focused ? "cart" : "cart-outline";
 							iconName = focused ? "cart" : "cart-outline";
 						} else if (routeName === "MyAccount") {
 							iconName = focused ? "person" : "person-outline";
