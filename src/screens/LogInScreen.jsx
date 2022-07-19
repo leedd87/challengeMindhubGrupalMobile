@@ -9,10 +9,8 @@ import {
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import usersActions from "../../redux/actions/usersActions";
-import { Input, Button } from "@rneui/themed";
 
-// const image = { uri: "https://wallpapercave.com/wp/wp7318054.jpg" };
+const image = { uri: "https://wallpapercave.com/wp/wp7318054.jpg" };
 
 const LogInScreen = ({ navigation }) => {
 	const dispatch = useDispatch();
@@ -20,15 +18,16 @@ const LogInScreen = ({ navigation }) => {
 	const [password, setPassword] = useState("");
 
 	const handleSubmit = async () => {
-		const logedUser = {
-			email: email,
-			password: password,
-			from: "form-signin",
-		};
-		let res = await dispatch(usersActions.signInUser(logedUser));
-		console.log(res);
-		console.log(res.data.message);
-		alert(res.data.message);
+		console.log("PRESS IT");
+		// const logedUser = {
+		// 	email: email,
+		// 	password: password,
+		// 	from: "form-signin",
+		// };
+		// let res = await dispatch(usersActions.signInUser(logedUser));
+		// console.log(res);
+		// console.log(res.data.message);
+		// alert(res.data.message);
 
 		// let messagePopUp = res.data.message;
 		// if (res.data.success) {
