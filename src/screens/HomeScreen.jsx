@@ -61,18 +61,17 @@ const HomeScreen = ({ navigation }) => {
 				>
 					<Text style={{ color: "white", fontSize: 20 }}>Nike</Text>
 				</LinearGradient>
-				{/* </View> */}
+
 				<Image
-					// source={{ uri: shoe }}
 					source={require("../assets/images/nike_shoes.png")}
 					style={{ width: 150, height: 150 }}
 				></Image>
-				{/* </View> */}
 			</LinearGradient>
 			<Types navigation={navigation} />
 			<View style={{ margin: 12 }}>
 				<Text style={{ fontWeight: "bold" }}>Popular</Text>
 			</View>
+			<View></View>
 		</View>
 	);
 };
