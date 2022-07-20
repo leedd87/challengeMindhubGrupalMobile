@@ -10,7 +10,9 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
-const image = { uri: "https://wallpapercave.com/wp/wp7318054.jpg" };
+const image = {
+	uri: "https://i.pinimg.com/736x/2c/30/52/2c305213333938d448a03bdd51231549.jpg",
+};
 
 const LogInScreen = ({ navigation }) => {
 	const dispatch = useDispatch();
