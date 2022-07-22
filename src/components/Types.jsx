@@ -7,10 +7,37 @@ import {
 	TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 import Icon from "react-native-vector-icons/Ionicons";
+import typeShoesActions from "../../redux/actions/typeShoesActions";
+import brandShoesActions from "../../redux/actions/brandShoesActions";
 
 const Types = ({ navigation }) => {
+	const dispatch = useDispatch();
+	const [typeShoes, setTypeShoes] = useState();
+	const [brandShoes, setBrandShoes] = useState();
+
+	useEffect(() => {
+		dispatch(typeShoesActions.getTypeShoes()).then((res) =>
+			setTypeShoes(res.data.response.typeShoe)
+		);
+	}, []);
+
+	useEffect(() => {
+		dispatch(brandShoesActions.getBrandShoes()).then((res) =>
+			setBrandShoes(res.data.response.brandShoe)
+		);
+	}, []);
+
+	console.log(brandShoes);
+
+	// const typeShoes = useSelector((store) => store.typeShoesReducer.typeShoes);
+
+	// console.log(typeShoes?.typeShoe[0]);
+	//{ id: typeShoes.typeShoe[0]._id }
+
 	return (
 		<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 			<TouchableOpacity
@@ -32,7 +59,9 @@ const Types = ({ navigation }) => {
 
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Nike")}
+				onPress={() =>
+					navigation.navigate("Nike", { id: brandShoes[0]._id })
+				}
 			>
 				<Image
 					// source={{ uri: shoe }}
@@ -43,7 +72,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Adidas")}
+				onPress={() =>
+					navigation.navigate("Adidas", { id: brandShoes[1]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -53,7 +84,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("NewBalance")}
+				onPress={() =>
+					navigation.navigate("NewBalance", { id: brandShoes[3]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -63,7 +96,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Jordan")}
+				onPress={() =>
+					navigation.navigate("Jordan", { id: brandShoes[2]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -73,7 +108,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Asics")}
+				onPress={() =>
+					navigation.navigate("Asics", { id: brandShoes[4]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -83,7 +120,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Balenciaga")}
+				onPress={() =>
+					navigation.navigate("Balenciaga", { id: brandShoes[5]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -93,7 +132,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Dior")}
+				onPress={() =>
+					navigation.navigate("Dior", { id: brandShoes[6]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -103,7 +144,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Louis")}
+				onPress={() =>
+					navigation.navigate("Louis", { id: brandShoes[7]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -113,7 +156,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Fancy")}
+				onPress={() =>
+					navigation.navigate("Fancy", { id: typeShoes[2]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -123,7 +168,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Urban")}
+				onPress={() =>
+					navigation.navigate("Urban", { id: typeShoes[0]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
@@ -133,7 +180,9 @@ const Types = ({ navigation }) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
-				onPress={() => navigation.navigate("Sport")}
+				onPress={() =>
+					navigation.navigate("Sport", { id: typeShoes[1]._id })
+				}
 			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}

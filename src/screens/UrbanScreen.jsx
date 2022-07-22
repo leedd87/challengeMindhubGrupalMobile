@@ -1,10 +1,29 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import shoesActions from "../../redux/actions/shoesActions";
 
-const UrbanScreen = () => {
+const UrbanScreen = ({ navigation, route }) => {
+	const dispatch = useDispatch();
+	const [urbanShoes, setUrbanShoes] = useState();
+	const { id } = route.params;
+	console.log(id);
+
+	useEffect(() => {
+		dispatch(shoesActions.getShoesByType(id)).then((res) =>
+			setUrbanShoes(res.data.response)
+		);
+	}, []);
+
 	return (
 		<View>
-			<Text>UrbanScreen</Text>
+			{urbanShoes &&
+				urbanShoes.map((item, index) => (
+					<View key={index}>
+						<Text>{item.name}</Text>
+					</View>
+				))}
 		</View>
 	);
 };

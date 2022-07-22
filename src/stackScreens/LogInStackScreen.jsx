@@ -7,7 +7,7 @@ const LogInStack = createNativeStackNavigator();
 const LogInStackScreen = () => {
 	return (
 		<LogInStack.Navigator>
-			<LogInStack.Screen name="LogIn" component={LogInScreen} />
+			<LogInStack.Screen name="Log In" component={LogInScreen} />
 			<LogInStack.Screen name="SignUp" component={SignUpScreen} />
 		</LogInStack.Navigator>
 	);

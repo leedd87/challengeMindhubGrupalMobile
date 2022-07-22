@@ -14,6 +14,7 @@ import shoesActions from "../redux/actions/shoesActions";
 import HomeStackScreen from "./stackScreens/HomeStackScreen";
 import LogInStackScreen from "./stackScreens/LogInStackScreen";
 import ShopStackScreen from "./stackScreens/ShopStackScreen";
+import AboutUsStackScreen from "./stackScreens/AboutStackScreen";
 
 // //Screen names
 
@@ -58,6 +59,8 @@ const MainContainer = () => {
 							iconName = "store";
 						} else if (route.name === "MyAccount") {
 							iconName = "user";
+						} else if (route.name === "AboutUs") {
+							iconName = "info";
 						}
 						return (
 							<FontAwesome5 name={iconName} size={20} color={"red"} />
@@ -77,7 +80,11 @@ const MainContainer = () => {
 					component={ShopStackScreen}
 					options={{ headerShown: false }}
 				/>
-
+				<Tab.Screen
+					name={"AboutUs"}
+					options={{ headerShown: false }}
+					component={AboutUsStackScreen}
+				/>
 				<Tab.Screen
 					name={"MyAccount"}
 					options={{ headerShown: false }}

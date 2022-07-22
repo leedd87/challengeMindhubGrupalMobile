@@ -19,5 +19,21 @@ const shoesActions = {
 			return res;
 		};
 	},
+	getShoesByType: (id) => {
+		return async (dispatch, getState) => {
+			const res = await axios.get(
+				`https://daftlab-back.herokuapp.com/api/shoesByType/${id}`
+			);
+			return res;
+		};
+	},
+	getShoesByBrand: (id) => {
+		return async (dispatch, getState) => {
+			const res = await axios.get(
+				`https://daftlab-back.herokuapp.com/api/shoesByBrand/${id}`
+			);
+			return res;
+		};
+	},
 };
 export default shoesActions;
