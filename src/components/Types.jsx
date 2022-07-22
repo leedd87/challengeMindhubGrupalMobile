@@ -14,7 +14,7 @@ const Types = ({ navigation }) => {
 	return (
 		<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 			<TouchableOpacity
-				onPress={() => navigation.navigate("Cart")}
+				onPress={() => navigation.navigate("Shop")}
 				style={{
 					flexDirection: "row",
 					justifyContent: "space-around",
@@ -30,49 +30,117 @@ const Types = ({ navigation }) => {
 				<Text>All</Text>
 			</TouchableOpacity>
 
-			<View style={styles.typeContainer}>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Nike")}
+			>
 				<Image
 					// source={{ uri: shoe }}
 					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
-				></Image>
-				<Text>Footwear</Text>
-			</View>
-			<View style={styles.typeContainer}>
+					style={{ width: 30, height: 30, marginRight: 15 }}
+				/>
+				<Text style={{ fontSize: 16 }}>Nike</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Adidas")}
+			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
 					style={{ width: 25, height: 25, marginRight: 5 }}
 				></Image>
-				<Text>Footwear</Text>
-			</View>
-			<View style={styles.typeContainer}>
+				<Text>Adidas</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("NewBalance")}
+			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
 					style={{ width: 25, height: 25, marginRight: 5 }}
 				></Image>
-				<Text>Footwear</Text>
-			</View>
-			<View style={styles.typeContainer}>
+				<Text>New Balance</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Jordan")}
+			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
 					style={{ width: 25, height: 25, marginRight: 5 }}
 				></Image>
-				<Text>Footwear</Text>
-			</View>
-			<View style={styles.typeContainer}>
+				<Text>Jordan</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Asics")}
+			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
 					style={{ width: 25, height: 25, marginRight: 5 }}
 				></Image>
-				<Text>Footwear</Text>
-			</View>
-			<View style={styles.typeContainer}>
+				<Text>Asics</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Balenciaga")}
+			>
 				<Image
 					source={require("../assets/images/nike_shoes.png")}
 					style={{ width: 25, height: 25, marginRight: 5 }}
 				></Image>
-				<Text>Footwear</Text>
-			</View>
+				<Text>Balenciaga</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Dior")}
+			>
+				<Image
+					source={require("../assets/images/nike_shoes.png")}
+					style={{ width: 25, height: 25, marginRight: 5 }}
+				></Image>
+				<Text>Dior</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Louis")}
+			>
+				<Image
+					source={require("../assets/images/nike_shoes.png")}
+					style={{ width: 25, height: 25, marginRight: 5 }}
+				></Image>
+				<Text>Louis Vuittom</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Fancy")}
+			>
+				<Image
+					source={require("../assets/images/nike_shoes.png")}
+					style={{ width: 25, height: 25, marginRight: 5 }}
+				></Image>
+				<Text>Fancy</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Urban")}
+			>
+				<Image
+					source={require("../assets/images/nike_shoes.png")}
+					style={{ width: 25, height: 25, marginRight: 5 }}
+				></Image>
+				<Text>Urban</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() => navigation.navigate("Sport")}
+			>
+				<Image
+					source={require("../assets/images/nike_shoes.png")}
+					style={{ width: 25, height: 25, marginRight: 5 }}
+				></Image>
+				<Text>Sport</Text>
+			</TouchableOpacity>
 		</ScrollView>
 	);
 };
@@ -85,7 +153,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 		margin: 8,
 		padding: 10,
-		width: 110,
+		width: 125,
 		borderRadius: 10,
 		justifyContent: "center",
 		alignItems: "center",
