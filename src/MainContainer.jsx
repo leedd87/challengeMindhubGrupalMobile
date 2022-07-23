@@ -2,12 +2,11 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-
 import { useEffect } from "react";
-
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import shoesActions from "../redux/actions/shoesActions";
+import { View, Text, TouchableOpacity } from "react-native";
 
 //Stack Screens
 
@@ -15,6 +14,9 @@ import HomeStackScreen from "./stackScreens/HomeStackScreen";
 import LogInStackScreen from "./stackScreens/LogInStackScreen";
 import ShopStackScreen from "./stackScreens/ShopStackScreen";
 import AboutUsStackScreen from "./stackScreens/AboutStackScreen";
+
+import { SafeAreaView } from "react-native-safe-area-context";
+import WishListStackScreen from "./stackScreens/WishListStackScreen";
 
 // //Screen names
 
@@ -53,7 +55,7 @@ const MainContainer = () => {
 				screenOptions={({ route }) => ({
 					tabBarIcon: ({ focused, size, color }) => {
 						let iconName;
-						if (route.name === "DAFTLAB") {
+						if (route.name === "Home") {
 							iconName = "home";
 						} else if (route.name === "MyShop") {
 							iconName = "store";
@@ -61,6 +63,8 @@ const MainContainer = () => {
 							iconName = "user";
 						} else if (route.name === "AboutUs") {
 							iconName = "info";
+						} else if (route.name === "WishList") {
+							iconName = "heart";
 						}
 						return (
 							<FontAwesome5 name={iconName} size={20} color={"red"} />
@@ -71,9 +75,15 @@ const MainContainer = () => {
 				})}
 			>
 				<Tab.Screen
-					name={"DAFTLAB"}
+					name={"Home"}
 					options={{ headerShown: false }}
 					component={HomeStackScreen}
+				/>
+				{/*condicional de user? */}
+				<Tab.Screen
+					name={"WishList"}
+					options={{ headerShown: false }}
+					component={WishListStackScreen}
 				/>
 				<Tab.Screen
 					name={"MyShop"}

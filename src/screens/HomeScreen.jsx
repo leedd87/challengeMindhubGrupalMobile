@@ -44,6 +44,7 @@ const HomeScreen = ({ navigation }) => {
 						onChangeText={(text) => {
 							setInput(text);
 							console.log(text);
+							navigation.navigate("Cart");
 						}}
 						value={input}
 						placeholder={"Search"}

@@ -15,6 +15,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import shoesActions from "../../redux/actions/shoesActions";
+import shopActions from "../../redux/actions/shopActions";
 
 const ShopScreen = ({ navigation }) => {
 	const [input, setInput] = useState("");
@@ -25,75 +26,107 @@ const ShopScreen = ({ navigation }) => {
 	}, []);
 
 	const shoes = useSelector((store) => store.shoesReducer.shoes);
-	console.log(shoes);
+
+	const addCarrito = (shoes) => {
+		//funcion addCarrito
+
+		const product = {
+			image: shoes.image[0],
+			name: shoes.name,
+			price: shoes.price,
+			id: shoes._id,
+			cant: 1,
+		};
+
+		dispatch(shopActions.addToShop(product));
+	};
+
 	return (
 		<SafeAreaView>
-			<TouchableOpacity>
-				<View
-					style={{
-						height: "10%",
-					}}
-				>
-					<View style={styles.containerInput}>
-						<TextInput
-							style={styles.input}
-							onChangeText={(text) => {
-								setInput(text);
-								console.log(text);
-							}}
-							value={input}
-							placeholder={"Search"}
-							keyboardType="default"
-						></TextInput>
-						<Icon
-							name="cart-outline"
-							size={35}
-							color="black"
-							style={{ marginRight: 15 }}
-							onPress={() => navigation.navigate("Shop")}
-						/>
-					</View>
+			<View
+				style={{
+					height: "10%",
+				}}
+			>
+				<View style={styles.containerInput}>
+					<TextInput
+						style={styles.input}
+						onChangeText={(text) => {
+							setInput(text);
+							console.log(text);
+						}}
+						value={input}
+						placeholder={"Search"}
+						keyboardType="default"
+					></TextInput>
+					<Icon
+						name="cart-outline"
+						size={35}
+						color="black"
+						style={{ marginRight: 15 }}
+						onPress={() => navigation.navigate("Cart")}
+					/>
 				</View>
+			</View>
 
-				<View style={{ height: "90%" }}>
-					<FlatList
-						data={shoes}
-						showsVerticalScrollIndicator={false}
-						renderItem={({ item, index }) => {
-							return (
-								<View
-									key={index}
-									style={stylesCitiesScreen.citiesContainer}
-								>
-									{/* <CitiesCards
+			<View style={{ height: "90%" }}>
+				<FlatList
+					data={shoes}
+					showsVerticalScrollIndicator={false}
+					renderItem={({ item, index }) => {
+						return (
+							<View key={index} style={stylesShopScreen.shopContainer}>
+								{/* <CitiesCards
 											city={item}
 											navigation={navigation}
 										/> */}
-									<TouchableOpacity
-										onPress={() =>
-											navigation.navigate("Detail", {
-												id: item._id,
-											})
-										}
-									>
-										<View style={stylesCard.container}>
-											<Image
-												source={{
-													uri: item.image[0],
+								<TouchableOpacity>
+									<View style={stylesCard.container}>
+										<Image
+											source={{
+												uri: item.image[0],
+											}}
+											style={{ height: 200 }}
+										/>
+										<Text style={stylesCard.text}>{item.name}</Text>
+										<View>
+											<Text
+												onPress={() =>
+													navigation.navigate("Detail", {
+														id: item._id,
+													})
+												}
+											>
+												View More
+											</Text>
+											<Text
+												onPress={() => {
+													addCarrito(item);
+													navigation.navigate("Cart", {
+														id: item._id,
+													});
 												}}
-												style={{ height: 200 }}
-											/>
-											<Text style={stylesCard.text}>
-												{item.name}
+											>
+												Add to Cart
+											</Text>
+											<Text
+												onPress={() => {
+													addCarrito(item);
+													navigation.navigate("Wish", {
+														id: item._id,
+													});
+												}}
+											>
+												Wish
 											</Text>
 										</View>
-									</TouchableOpacity>
-								</View>
-							);
-						}}
-					/>
-				</View>
-			</TouchableOpacity>
+									</View>
+								</TouchableOpacity>
+							</View>
+						);
+					}}
+				/>
+			</View>
 		</SafeAreaView>
 	);
 };
@@ -130,6 +163,15 @@ const styles = StyleSheet.create({
 	},
 });
 
+const stylesShopScreen = StyleSheet.create({
+	shopContainer: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+		backgroundColor: "#white",
+	},
+});
+
 const stylesNotFound = StyleSheet.create({
 	container: {
 		backgroundColor: "#30475E",
@@ -142,15 +184,6 @@ const stylesNotFound = StyleSheet.create({
 		padding: 10,
 		backgroundColor: "#f5f5f5",
 		margin: 30,
-	},
-});
-
-const stylesCitiesScreen = StyleSheet.create({
-	citiesContainer: {
-		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
-		backgroundColor: "#30475E",
 	},
 });
 

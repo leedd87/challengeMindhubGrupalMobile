@@ -31,13 +31,6 @@ const Types = ({ navigation }) => {
 		);
 	}, []);
 
-	console.log(brandShoes);
-
-	// const typeShoes = useSelector((store) => store.typeShoesReducer.typeShoes);
-
-	// console.log(typeShoes?.typeShoe[0]);
-	//{ id: typeShoes.typeShoe[0]._id }
-
 	return (
 		<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 			<TouchableOpacity
@@ -56,7 +49,42 @@ const Types = ({ navigation }) => {
 				<Icon name="grid-outline" size={25} color="black" />
 				<Text>All</Text>
 			</TouchableOpacity>
-
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() =>
+					navigation.navigate("Fancy", { id: typeShoes[2]._id })
+				}
+			>
+				<Image
+					source={require("../assets/images/nike_shoes.png")}
+					style={{ width: 25, height: 25, marginRight: 5 }}
+				></Image>
+				<Text>Fancy</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() =>
+					navigation.navigate("Urban", { id: typeShoes[0]._id })
+				}
+			>
+				<Image
+					source={require("../assets/images/nike_shoes.png")}
+					style={{ width: 25, height: 25, marginRight: 5 }}
+				></Image>
+				<Text>Urban</Text>
+			</TouchableOpacity>
+			<TouchableOpacity
+				style={styles.typeContainer}
+				onPress={() =>
+					navigation.navigate("Sport", { id: typeShoes[1]._id })
+				}
+			>
+				<Image
+					source={require("../assets/images/nike_shoes.png")}
+					style={{ width: 25, height: 25, marginRight: 5 }}
+				></Image>
+				<Text>Sport</Text>
+			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.typeContainer}
 				onPress={() =>
@@ -153,42 +181,6 @@ const Types = ({ navigation }) => {
 					style={{ width: 25, height: 25, marginRight: 5 }}
 				></Image>
 				<Text>Louis Vuittom</Text>
-			</TouchableOpacity>
-			<TouchableOpacity
-				style={styles.typeContainer}
-				onPress={() =>
-					navigation.navigate("Fancy", { id: typeShoes[2]._id })
-				}
-			>
-				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
-				></Image>
-				<Text>Fancy</Text>
-			</TouchableOpacity>
-			<TouchableOpacity
-				style={styles.typeContainer}
-				onPress={() =>
-					navigation.navigate("Urban", { id: typeShoes[0]._id })
-				}
-			>
-				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
-				></Image>
-				<Text>Urban</Text>
-			</TouchableOpacity>
-			<TouchableOpacity
-				style={styles.typeContainer}
-				onPress={() =>
-					navigation.navigate("Sport", { id: typeShoes[1]._id })
-				}
-			>
-				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
-				></Image>
-				<Text>Sport</Text>
 			</TouchableOpacity>
 		</ScrollView>
 	);

@@ -9,7 +9,6 @@ const SportScreen = ({ navigation, route }) => {
 	const dispatch = useDispatch();
 	const [sportShoes, setSportShoes] = useState();
 	const { id } = route.params;
-	console.log(id);
 
 	useEffect(() => {
 		dispatch(shoesActions.getShoesByType(id)).then((res) =>

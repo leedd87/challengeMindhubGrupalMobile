@@ -32,6 +32,7 @@ const shoesActions = {
 			const res = await axios.get(
 				`https://daftlab-back.herokuapp.com/api/shoesByBrand/${id}`
 			);
+			dispatch({ type: "GET_BRAND_SHOE", payload: res.data.response });
 			return res;
 		};
 	},

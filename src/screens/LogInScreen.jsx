@@ -57,6 +57,8 @@ const LogInScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
+						borderWidth: 2,
+						borderColor: "black",
 					}}
 				/>
 				<TextInput
@@ -71,6 +73,8 @@ const LogInScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
+						borderWidth: 2,
+						borderColor: "black",
 					}}
 				/>
 				<TouchableOpacity
@@ -87,7 +91,7 @@ const LogInScreen = ({ navigation }) => {
 					<Text
 						onPress={() => {
 							handleSubmit();
-							navigation.navigate("MyTinerary");
+							navigation.navigate("DAFTLAB");
 						}}
 						style={{
 							textAlign: "center",

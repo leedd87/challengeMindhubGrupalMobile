@@ -8,7 +8,6 @@ const DetailScreen = ({ navigation, route }) => {
 	const dispatch = useDispatch();
 	const [shoe, setShoe] = useState();
 	const { id } = route.params;
-	console.log(id);
 
 	useEffect(() => {
 		dispatch(shoesActions.getOneShoe(id)).then((res) =>

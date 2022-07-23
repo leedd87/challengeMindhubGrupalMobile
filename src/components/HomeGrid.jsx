@@ -41,18 +41,14 @@ const HomeGrid = () => {
 						source={{ uri: nikeShoesTwo }}
 						resizeMode="cover"
 						style={{ flex: 1 }}
-					>
-						<Text>IMAGEN</Text>
-					</ImageBackground>
+					></ImageBackground>
 				</View>
 				<View style={{ width: "40%", height: 200 }}>
 					<ImageBackground
 						source={{ uri: nikeShoesOne }}
 						resizeMode="cover"
 						style={{ flex: 1 }}
-					>
-						<Text>IMAGEN</Text>
-					</ImageBackground>
+					></ImageBackground>
 				</View>
 			</View>
 			<View style={{ flexDirection: "row", marginVertical: 10 }}>
@@ -66,20 +62,14 @@ const HomeGrid = () => {
 						source={{ uri: newBalanceOne }}
 						resizeMode="cover"
 						style={{ flex: 1, marginRight: 10 }}
-					>
-						<Text>IMAGEN</Text>
-					</ImageBackground>
+					></ImageBackground>
 				</View>
-				<View
-					style={{ width: "50%", height: 200, backgroundColor: "green" }}
-				>
+				<View style={{ width: "50%", height: 200 }}>
 					<ImageBackground
 						source={{ uri: newBalanceTwo }}
 						resizeMode="cover"
 						style={{ flex: 1 }}
-					>
-						<Text>IMAGEN</Text>
-					</ImageBackground>
+					></ImageBackground>
 				</View>
 			</View>
 			<View style={{ width: "100%", height: 180, backgroundColor: "blue" }}>
@@ -87,18 +77,10 @@ const HomeGrid = () => {
 					source={{ uri: nikeShoesThree }}
 					resizeMode="cover"
 					style={{ flex: 1 }}
-				>
-					<Text>IMAGEN</Text>
-				</ImageBackground>
+				></ImageBackground>
 			</View>
 		</ScrollView>
 	);
 };
 
 export default HomeGrid;
-
-const styles = StyleSheet.create({
-	card: {
-		margin: 15,
-	},
-});

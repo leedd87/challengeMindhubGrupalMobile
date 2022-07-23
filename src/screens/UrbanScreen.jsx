@@ -8,7 +8,6 @@ const UrbanScreen = ({ navigation, route }) => {
 	const dispatch = useDispatch();
 	const [urbanShoes, setUrbanShoes] = useState();
 	const { id } = route.params;
-	console.log(id);
 
 	useEffect(() => {
 		dispatch(shoesActions.getShoesByType(id)).then((res) =>

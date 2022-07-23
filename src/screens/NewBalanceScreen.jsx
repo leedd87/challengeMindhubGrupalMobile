@@ -1,10 +1,30 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import shoesActions from "../../redux/actions/shoesActions";
 
-const NewBalanceScreen = () => {
+const NewBalanceScreen = ({ navigation, route }) => {
+	const dispatch = useDispatch();
+	const [newBalance, setNewBalance] = useState();
+	const { id } = route.params;
+
+	useEffect(() => {
+		dispatch(shoesActions.getShoesByBrand(id)).then((res) =>
+			setNewBalance(res.data.response)
+		);
+	}, []);
+
 	return (
 		<View>
-			<Text>NewBalanceScreen</Text>
+			{newBalance &&
+				newBalance.map((item, index) => {
+					return (
+						<View key={index}>
+							<Text>{item.name}</Text>
+						</View>
+					);
+				})}
 		</View>
 	);
 };
