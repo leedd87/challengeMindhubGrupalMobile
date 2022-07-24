@@ -14,6 +14,7 @@ import LouisVuittomScreen from "../screens/LouisVuittomScreen";
 import FancyScreen from "../screens/FancyScreen";
 import UrbanScreen from "../screens/UrbanScreen";
 import SportScreen from "../screens/SportScreen";
+import DetailScreen from "../screens/DetailScreen";
 
 const HomeStack = createNativeStackNavigator();
 const HomeStackScreen = () => {
@@ -33,6 +34,7 @@ const HomeStackScreen = () => {
 			<HomeStack.Screen name="Fancy" component={FancyScreen} />
 			<HomeStack.Screen name="Urban" component={UrbanScreen} />
 			<HomeStack.Screen name="Sport" component={SportScreen} />
+			<HomeStack.Screen name="Detail" component={DetailScreen} />
 		</HomeStack.Navigator>
 	);
 };

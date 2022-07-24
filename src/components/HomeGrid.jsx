@@ -9,9 +9,6 @@ import {
 	ImageBackground,
 } from "react-native";
 
-import MasonryList from "@react-native-seoul/masonry-list";
-import { FlatList } from "react-native-web";
-
 const height = Dimensions.get("window").height;
 const nikeShoesOne =
 	"https://images-ext-1.discordapp.net/external/Vq4iUvDILaxPTUGwk9vfFeEoasA1P0GQD_8WbTZdbeI/%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D1170%26q%3D80/https/images.unsplash.com/photo-1568391603099-482cb961cfa5";

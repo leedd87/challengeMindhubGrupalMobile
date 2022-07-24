@@ -15,9 +15,6 @@ import LogInStackScreen from "./stackScreens/LogInStackScreen";
 import ShopStackScreen from "./stackScreens/ShopStackScreen";
 import AboutUsStackScreen from "./stackScreens/AboutStackScreen";
 
-import { SafeAreaView } from "react-native-safe-area-context";
-import WishListStackScreen from "./stackScreens/WishListStackScreen";
-
 // //Screen names
 
 const Tab = createBottomTabNavigator();
@@ -63,8 +60,6 @@ const MainContainer = () => {
 							iconName = "user";
 						} else if (route.name === "AboutUs") {
 							iconName = "info";
-						} else if (route.name === "WishList") {
-							iconName = "heart";
 						}
 						return (
 							<FontAwesome5 name={iconName} size={20} color={"red"} />
@@ -80,11 +75,7 @@ const MainContainer = () => {
 					component={HomeStackScreen}
 				/>
 				{/*condicional de user? */}
-				<Tab.Screen
-					name={"WishList"}
-					options={{ headerShown: false }}
-					component={WishListStackScreen}
-				/>
+
 				<Tab.Screen
 					name={"MyShop"}
 					component={ShopStackScreen}
