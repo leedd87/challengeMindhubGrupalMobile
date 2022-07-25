@@ -39,17 +39,9 @@ const HomeScreen = ({ navigation }) => {
 		<View>
 			<View style={{ height: "40%" }}>
 				<View style={styles.container}>
-					<TextInput
-						style={styles.input}
-						onChangeText={(text) => {
-							setInput(text);
-							console.log(text);
-							navigation.navigate("Cart");
-						}}
-						value={input}
-						placeholder={"Search"}
-						keyboardType="default"
-					></TextInput>
+					<Text style={{ fontWeight: "bold", textAlign: "center" }}>
+						Popular Shoes
+					</Text>
 					<Icon
 						name="cart-outline"
 						size={35}
@@ -57,14 +49,9 @@ const HomeScreen = ({ navigation }) => {
 						style={{ marginRight: 15 }}
 						onPress={() => navigation.navigate("Cart")}
 					/>
-
 					<StatusBar style="auto" />
 				</View>
-				<View style={{ marginBottom: 15 }}>
-					<Text style={{ fontWeight: "bold", textAlign: "center" }}>
-						Popular Shoes
-					</Text>
-				</View>
+				{/*---------SCROLL-------*/}
 				<ScrollView
 					horizontal={true}
 					showsHorizontalScrollIndicator={false}
@@ -164,6 +151,7 @@ const HomeScreen = ({ navigation }) => {
 						></Image>
 					</LinearGradient>
 				</ScrollView>
+				{/*---------FIN DE SCROLL-------*/}
 				<View>
 					<Types navigation={navigation} />
 				</View>
@@ -189,7 +177,7 @@ const styles = StyleSheet.create({
 		height: "25%",
 	},
 	input: {
-		height: 40,
+		height: 35,
 		margin: 12,
 		width: 300,
 		borderWidth: 1,

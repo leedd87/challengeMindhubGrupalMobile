@@ -33,7 +33,7 @@ const NewBalanceScreen = ({ navigation, route }) => {
 	const ProductCard = ({ data }) => {
 		return (
 			<LinearGradient
-				colors={["black", "#C8C6C6", "#F7F5F2"]}
+				colors={["black", "#100F0F", "#F7F5F2"]}
 				style={{
 					width: "46%",
 					marginVertical: 10,
@@ -155,7 +155,7 @@ const NewBalanceScreen = ({ navigation, route }) => {
 			{/*INPUT*/}
 			<View
 				style={{
-					height: "10%",
+					height: "9%",
 				}}
 			>
 				<View style={styles.containerInput}>
@@ -181,7 +181,7 @@ const NewBalanceScreen = ({ navigation, route }) => {
 			<View
 				style={{
 					width: "100%",
-					height: "90%",
+					height: "91%",
 					backgroundColor: "#f5f5f5",
 				}}
 			>
@@ -247,4 +247,23 @@ const NewBalanceScreen = ({ navigation, route }) => {
 
 export default NewBalanceScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: "#30475E", // "#30475E",
+		height: 600,
+	},
+	containerInput: {
+		flexDirection: "row",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	input: {
+		height: 35,
+		margin: 12,
+		width: 300,
+		borderWidth: 1,
+		padding: 10,
+		borderRadius: 13,
+	},
+});

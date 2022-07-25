@@ -33,7 +33,7 @@ const FancyScreen = ({ navigation, route }) => {
 	const ProductCard = ({ data }) => {
 		return (
 			<LinearGradient
-				colors={["black", "#C8C6C6", "#F7F5F2"]}
+				colors={["black", "#100F0F", "#F7F5F2"]}
 				style={{
 					width: "46%",
 					marginVertical: 10,
@@ -155,7 +155,7 @@ const FancyScreen = ({ navigation, route }) => {
 			{/*INPUT*/}
 			<View
 				style={{
-					height: "10%",
+					height: "9%",
 				}}
 			>
 				<View style={styles.containerInput}>
@@ -181,7 +181,7 @@ const FancyScreen = ({ navigation, route }) => {
 			<View
 				style={{
 					width: "100%",
-					height: "90%",
+					height: "91%",
 					backgroundColor: "#f5f5f5",
 				}}
 			>
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	input: {
-		height: 40,
+		height: 35,
 		margin: 12,
 		width: 300,
 		borderWidth: 1,
