@@ -170,9 +170,9 @@ const Balenciaga = ({ navigation, route }) => {
 					></TextInput>
 					<Icon
 						name="cart-outline"
-						size={35}
+						size={30}
 						color="black"
-						style={{ marginRight: 15 }}
+						style={{ marginRight: 15, borderWidth: 1, borderRadius: 5 }}
 						onPress={() => navigation.navigate("Cart")}
 					/>
 				</View>

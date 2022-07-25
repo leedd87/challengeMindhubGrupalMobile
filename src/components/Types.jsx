@@ -32,7 +32,11 @@ const Types = ({ navigation }) => {
 	}, []);
 
 	return (
-		<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+		<ScrollView
+			horizontal={true}
+			showsHorizontalScrollIndicator={false}
+			style={{ height: 55 }}
+		>
 			<TouchableOpacity
 				onPress={() => navigation.navigate("Shop")}
 				style={{
@@ -46,7 +50,7 @@ const Types = ({ navigation }) => {
 					width: 85,
 				}}
 			>
-				<Icon name="grid-outline" size={25} color="black" />
+				<Icon name="grid-outline" size={20} color="black" />
 				<Text>All</Text>
 			</TouchableOpacity>
 			<TouchableOpacity
@@ -56,8 +60,15 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
+					source={{
+						uri: "https://images-ext-2.discordapp.net/external/jcdtcBkaMTGGh4Lv17ucu-lVw2j4805AYk6NGwVOK2E/http/imgfz.com/i/YSpr6Kq.png",
+					}}
+					style={{
+						width: 25,
+						height: 25,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				></Image>
 				<Text>Fancy</Text>
 			</TouchableOpacity>
@@ -68,8 +79,15 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
+					source={{
+						uri: "https://images-ext-1.discordapp.net/external/9ECVeRSbrbJ9p2j4d6gfEEMzzYHlg-D0ytz52TdWoaU/https/d2r9epyceweg5n.cloudfront.net/stores/001/932/403/products/1201-f5123130972f8114e216490386212897-640-0.png",
+					}}
+					style={{
+						width: 28,
+						height: 28,
+						marginRight: 5,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				></Image>
 				<Text>Urban</Text>
 			</TouchableOpacity>
@@ -80,9 +98,16 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
-				></Image>
+					source={{
+						uri: "https://images-ext-2.discordapp.net/external/y8aB0AFS583IEzwvk8kCnxQYTNujoNEQob8l8yKsllw/http/imgfz.com/i/0UzeBtY.png",
+					}}
+					style={{
+						width: 25,
+						height: 25,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
+				/>
 				<Text>Sport</Text>
 			</TouchableOpacity>
 			<TouchableOpacity
@@ -93,8 +118,15 @@ const Types = ({ navigation }) => {
 			>
 				<Image
 					// source={{ uri: shoe }}
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 30, height: 30, marginRight: 15 }}
+					source={{
+						uri: "https://images-ext-1.discordapp.net/external/k0p61IVr7YFPbmqABDyZLwTMLQsSnmtnsWtWYo5nST0/http/imgfz.com/i/XOa2uhT.png",
+					}}
+					style={{
+						width: 28,
+						height: 28,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				/>
 				<Text style={{ fontSize: 16 }}>Nike</Text>
 			</TouchableOpacity>
@@ -105,9 +137,16 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
-				></Image>
+					source={{
+						uri: "https://images-ext-1.discordapp.net/external/MiL1ediR6yhJJHNIgzlnoaPPprI-HtUQyB84h6BlH9k/http/imgfz.com/i/BYvCQ3F.png",
+					}}
+					style={{
+						width: 28,
+						height: 28,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
+				/>
 				<Text>Adidas</Text>
 			</TouchableOpacity>
 			<TouchableOpacity
@@ -117,8 +156,15 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
+					source={{
+						uri: "https://images-ext-2.discordapp.net/external/jcdtcBkaMTGGh4Lv17ucu-lVw2j4805AYk6NGwVOK2E/http/imgfz.com/i/YSpr6Kq.png",
+					}}
+					style={{
+						width: 28,
+						height: 28,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				></Image>
 				<Text>New Balance</Text>
 			</TouchableOpacity>
@@ -129,8 +175,13 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
+					source={{ uri: "http://imgfz.com/i/2LcSzsB.png" }}
+					style={{
+						width: 28,
+						height: 28,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				></Image>
 				<Text>Jordan</Text>
 			</TouchableOpacity>
@@ -141,8 +192,13 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
+					source={{ uri: "http://imgfz.com/i/JvSx3Ad.png" }}
+					style={{
+						width: 28,
+						height: 28,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				></Image>
 				<Text>Asics</Text>
 			</TouchableOpacity>
@@ -153,8 +209,13 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
+					source={{ uri: "http://imgfz.com/i/mxILA59.png" }}
+					style={{
+						width: 28,
+						height: 28,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				></Image>
 				<Text>Balenciaga</Text>
 			</TouchableOpacity>
@@ -165,8 +226,13 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
+					source={{ uri: "http://imgfz.com/i/7MX26eY.png" }}
+					style={{
+						width: 28,
+						height: 28,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				></Image>
 				<Text>Dior</Text>
 			</TouchableOpacity>
@@ -177,8 +243,13 @@ const Types = ({ navigation }) => {
 				}
 			>
 				<Image
-					source={require("../assets/images/nike_shoes.png")}
-					style={{ width: 25, height: 25, marginRight: 5 }}
+					source={{ uri: "http://imgfz.com/i/vSmZMn8.png" }}
+					style={{
+						width: 25,
+						height: 25,
+						marginRight: 10,
+						transform: [{ rotate: "-35deg" }],
+					}}
 				></Image>
 				<Text>Louis Vuittom</Text>
 			</TouchableOpacity>

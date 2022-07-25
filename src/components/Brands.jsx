@@ -18,7 +18,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-1.discordapp.net/external/l3trFed3_CyIQc61n39ltvGgw0pmlpsczRCPh8tn3x0/https/thesneakershopgp.com/media/catalog/category/ADIDAS_136x136.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				/>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -26,7 +26,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-1.discordapp.net/external/IECGFE8rfYH1-r2Mdej1WAOvydiZ7H1lCgaLIQkh3s4/https/thesneakershopgp.com/media/catalog/category/ASICS_136x136_2_1_.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -34,7 +34,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-1.discordapp.net/external/qbB-1Edz9uhf6Ajejlz7eGIf3IsuTkoySpvwXl8UA-o/https/thesneakershopgp.com/media/catalog/category/converse_136x136_1_.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -42,7 +42,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-1.discordapp.net/external/6GULaCCeND6uokwH-uS9RVqILfNDYE5XWGZCCPp57QA/https/thesneakershopgp.com/media/catalog/category/CROCS_logo_136x136.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -50,7 +50,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-1.discordapp.net/external/eJnhasJKkWVWICXrK-3p-H_4CF0ndbKbKmkrJQrX048/https/thesneakershopgp.com/media/catalog/category/FILA_136x136_2.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -58,7 +58,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-1.discordapp.net/external/8W_yuVuOBBGI3Y3Csr9paX63bGdna9lj_uuEDnF25Uk/https/thesneakershopgp.com/media/catalog/category/new_balance_136X136.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -66,7 +66,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-2.discordapp.net/external/lkfK53jCf4gDvEea4qnjYu2kcNBidKmPQFmB_b93obE/https/thesneakershopgp.com/media/catalog/category/NIKE_136x136_2_1_1_.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -74,7 +74,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-1.discordapp.net/external/1CasSQDdgGeTvKjrkfbxSFxfbtBoDe6lP-1W-LVAos4/https/thesneakershopgp.com/media/catalog/category/PUMA_136X136.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -82,7 +82,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-1.discordapp.net/external/QSb_S3zTRglz79_un8wFZ7z2j8egFbSdQt38xVKvXTg/https/thesneakershopgp.com/media/catalog/category/reebok_logo_136x136_1_.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -90,7 +90,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-2.discordapp.net/external/RJlQpDdyS_NZ948c2Uapy4165j5GNqRU8nOnCyw2nH8/https/thesneakershopgp.com/media/catalog/category/Timberland_136x136_1_.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.typeContainer}>
@@ -98,7 +98,7 @@ const Types = () => {
 					source={{
 						uri: "https://images-ext-2.discordapp.net/external/fPWWLzh0MqXcPvA2pUah881mFxFt9ND3p1fjZrpv6pg/https/thesneakershopgp.com/media/catalog/category/Vans_136X136_1_.jpg",
 					}}
-					style={{ width: 45, height: 45 }}
+					style={{ width: 30, height: 30 }}
 				></Image>
 			</TouchableOpacity>
 		</ScrollView>

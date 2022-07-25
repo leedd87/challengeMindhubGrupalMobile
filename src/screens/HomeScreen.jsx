@@ -8,7 +8,7 @@ import {
 	Dimensions,
 	ScrollView,
 } from "react-native";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { useDispatch, useSelector } from "react-redux";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -16,6 +16,8 @@ import Types from "../components/Types";
 import { LinearGradient } from "expo-linear-gradient";
 import HomeGrid from "../components/HomeGrid";
 import Brands from "../components/Brands";
+import shoesActions from "../../redux/actions/shoesActions";
+import MaskedView from "@react-native-masked-view/masked-view";
 
 const height = Dimensions.get("window").height;
 
@@ -24,31 +26,57 @@ const adidasShoes =
 
 const newBalanceShoes =
 	"https://reactsport.herokuapp.com/img/productImages/shoe_newbalance_01.png";
-const HomeScreen = ({ navigation }) => {
-	const [input, setInput] = useState("");
 
+const nikeShoes =
+	"https://images-ext-1.discordapp.net/external/Tf54CURpuxt3-WEgayMBDLlmilFMpZGV3j343K9--AU/https/i.ibb.co/t8w4YyL/nike.png";
+const HomeScreen = ({ navigation }) => {
 	const dispatch = useDispatch();
 
-	// useEffect(() => {
-	// 	dispatch(shoesActions.getShoes());
-	// }, []);
+	useEffect(() => {
+		dispatch(shoesActions.getShoes());
+	}, []);
 
 	const shoes = useSelector((store) => store.shoesReducer.shoes);
 
 	return (
 		<View>
-			<View style={{ height: "40%" }}>
+			<View style={{ height: "37%" }}>
 				<View style={styles.container}>
-					<Text style={{ fontWeight: "bold", textAlign: "center" }}>
-						Popular Shoes
-					</Text>
-					<Icon
-						name="cart-outline"
-						size={35}
-						color="black"
-						style={{ marginRight: 15 }}
-						onPress={() => navigation.navigate("Cart")}
-					/>
+					<MaskedView
+						maskElement={
+							<Text
+								style={{
+									fontWeight: "bold",
+									justifyContent: "center",
+									// marginLeft: 125,
+									fontSize: 25,
+									backgroundColor: "transparent",
+								}}
+							>
+								Popular Shoes
+							</Text>
+						}
+					>
+						<LinearGradient
+							colors={["green", "#CFD2CF", "red", "#990000", "blue"]}
+							start={{ x: 0.2, y: 0 }}
+							end={{ x: 1, y: 1 }}
+							style={{ justifyContent: "center" }}
+						>
+							<Text
+								style={{
+									fontWeight: "bold",
+									textAlign: "center",
+									// marginLeft: 125,
+									fontSize: 25,
+									opacity: 0,
+								}}
+							>
+								Popular Shoes
+							</Text>
+						</LinearGradient>
+					</MaskedView>
+
 					<StatusBar style="auto" />
 				</View>
 				{/*---------SCROLL-------*/}
@@ -57,60 +85,41 @@ const HomeScreen = ({ navigation }) => {
 					showsHorizontalScrollIndicator={false}
 				>
 					<LinearGradient
-						colors={["#00d4ff", "#59f523", "#e0edea"]}
+						colors={["#9EB23B", "#59f523", "#e0edea"]}
 						style={styles.hero}
 						start={{ x: 0, y: 0.8 }}
 						end={{ x: 1, y: 1 }}
 					>
-						<LinearGradient
-							colors={["#5ce3ff", "#158c27", "#194f10"]}
-							start={{ x: 0, y: 0.8 }}
-							end={{ x: 1, y: 1 }}
-							style={{
-								// backgroundColor: "green",
-								height: 120,
-								width: 145,
-								borderRadius: 15,
-								alignItems: "center",
-								justifyContent: "center",
-							}}
+						<Text
+							style={{ color: "green", fontSize: 50, marginLeft: 20 }}
 						>
-							<Text style={{ color: "white", fontSize: 20 }}>NIKE</Text>
-						</LinearGradient>
+							NIKE
+						</Text>
 
 						<Image
-							source={require("../assets/images/nike_shoes.png")}
-							style={{ width: 150, height: 150 }}
-						></Image>
+							source={{ uri: nikeShoes }}
+							style={{
+								width: 180,
+								height: 100,
+								transform: [{ rotate: "-30deg" }],
+							}}
+						/>
 					</LinearGradient>
 					<LinearGradient
-						colors={["#00d4ff", "#59f523", "#e0edea"]}
+						colors={["#DFDFDE", "#FEFBF6", "#e0edea"]}
 						style={styles.hero}
 						start={{ x: 0, y: 0.8 }}
 						end={{ x: 1, y: 1 }}
 					>
-						<LinearGradient
-							colors={["#5ce3ff", "#158c27", "#194f10"]}
-							start={{ x: 0, y: 0.8 }}
-							end={{ x: 1, y: 1 }}
+						<Text
 							style={{
-								// backgroundColor: "green",
-								height: 120,
-								width: 120,
-								borderRadius: 15,
-								alignItems: "center",
-								justifyContent: "center",
+								color: "grey",
+								fontSize: 50,
+								marginLeft: 20,
 							}}
 						>
-							<Text
-								style={{
-									color: "white",
-									fontSize: 20,
-								}}
-							>
-								ADIDAS
-							</Text>
-						</LinearGradient>
+							ADIDAS
+						</Text>
 
 						<Image
 							source={{ uri: adidasShoes }}
@@ -119,36 +128,24 @@ const HomeScreen = ({ navigation }) => {
 								height: 200,
 								transform: [{ rotate: "-35deg" }],
 							}}
-						></Image>
+						/>
 					</LinearGradient>
 					<LinearGradient
-						colors={["#00d4ff", "#59f523", "#e0edea"]}
+						colors={["#990000", "#F55353", "#e0edea"]}
 						style={styles.hero}
 						start={{ x: 0, y: 0.8 }}
 						end={{ x: 1, y: 1 }}
 					>
-						<LinearGradient
-							colors={["#5ce3ff", "#158c27", "#194f10"]}
-							start={{ x: 0, y: 0.8 }}
-							end={{ x: 1, y: 1 }}
-							style={{
-								// backgroundColor: "green",
-								height: 120,
-								width: 120,
-								borderRadius: 15,
-								alignItems: "center",
-								justifyContent: "center",
-							}}
+						<Text
+							style={{ color: "#3D0000", fontSize: 50, marginLeft: 20 }}
 						>
-							<Text style={{ color: "white", fontSize: 20 }}>
-								NEW BALANCE
-							</Text>
-						</LinearGradient>
+							NB
+						</Text>
 
 						<Image
 							source={{ uri: newBalanceShoes }}
 							style={{ width: 150, height: 150 }}
-						></Image>
+						/>
 					</LinearGradient>
 				</ScrollView>
 				{/*---------FIN DE SCROLL-------*/}
@@ -157,10 +154,10 @@ const HomeScreen = ({ navigation }) => {
 				</View>
 			</View>
 
-			<View style={{ height: "50%" }}>
+			<View style={{ height: "56%" }}>
 				<HomeGrid />
 			</View>
-			<View style={{ height: "10%" }}>
+			<View style={{ height: "7%" }}>
 				<Brands />
 			</View>
 		</View>
@@ -174,16 +171,9 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "center",
 		alignItems: "center",
-		height: "25%",
+		height: 50,
 	},
-	input: {
-		height: 35,
-		margin: 12,
-		width: 300,
-		borderWidth: 1,
-		padding: 10,
-		borderRadius: 13,
-	},
+
 	hero: {
 		justifyContent: "space-around",
 		alignItems: "center",

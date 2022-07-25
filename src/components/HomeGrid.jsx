@@ -23,6 +23,18 @@ const newBalanceTwo =
 
 const nikeShoesThree = "https://cdn.wallpapersafari.com/59/37/ISGr2l.jpg";
 
+const nikeShoesFour =
+	"https://images-ext-1.discordapp.net/external/R9-US3eoOrxD6BnK2jArbRejnmf5FMkUeQlWB_kcpIQ/%3Ffit%3D1937%252C1090%26ssl%3D1/https/i0.wp.com/prettyphresh.com/wp-content/uploads/2021/11/A-Ma-Maniere-x-Air-Jordan-1-Receives-Confirmed-Release-Date-Campaign-Photos-Inside-cover.jpg?width=1635&height=920";
+
+const nikeShoesFive =
+	"https://images-ext-2.discordapp.net/external/OyTliHBMpPU4IxZWwmU4cQ8pHcb7F2NndRDCN_8M4E0/%3Fauto%3Dcompress%2Cformat%26q%3D60%26w%3D1920%26h%3D947/https/creativereview.imgix.net/content/uploads/2022/03/HP-Desktop.jpg?width=1864&height=920";
+
+const nikeShoesSix =
+	"https://images-ext-1.discordapp.net/external/2CN4kIzHD9Q_wIwvOk0T4-PCtAmBJb1Ttq0gqTcnW8A/https/www.theridernews.com/wp-content/uploads/2022/04/DSC05208-780x470.jpg";
+
+const nikeShoesSeven =
+	"https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80";
+
 const HomeGrid = () => {
 	return (
 		<ScrollView>
@@ -75,6 +87,48 @@ const HomeGrid = () => {
 					resizeMode="cover"
 					style={{ flex: 1 }}
 				></ImageBackground>
+			</View>
+			<View style={{ flexDirection: "row", marginVertical: 10 }}>
+				<View
+					style={{
+						width: "30%",
+						height: 200,
+					}}
+				>
+					<ImageBackground
+						source={{ uri: nikeShoesSeven }}
+						resizeMode="cover"
+						style={{ flex: 1, marginRight: 10 }}
+					></ImageBackground>
+				</View>
+				<View style={{ width: "70%", height: 200 }}>
+					<ImageBackground
+						source={{ uri: nikeShoesFour }}
+						resizeMode="cover"
+						style={{ flex: 1 }}
+					></ImageBackground>
+				</View>
+			</View>
+			<View style={{ flexDirection: "row", marginVertical: 10 }}>
+				<View
+					style={{
+						width: "60%",
+						height: 200,
+					}}
+				>
+					<ImageBackground
+						source={{ uri: nikeShoesFive }}
+						resizeMode="cover"
+						style={{ flex: 1, marginRight: 10 }}
+					></ImageBackground>
+				</View>
+				<View style={{ width: "40%", height: 200 }}>
+					<ImageBackground
+						source={{ uri: nikeShoesSix }}
+						resizeMode="cover"
+						style={{ flex: 1 }}
+					></ImageBackground>
+				</View>
 			</View>
 		</ScrollView>
 	);

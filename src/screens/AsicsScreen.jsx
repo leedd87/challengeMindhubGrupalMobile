@@ -33,7 +33,7 @@ const AsicsScreen = ({ route, navigation }) => {
 	const ProductCard = ({ data }) => {
 		return (
 			<LinearGradient
-				colors={["black", "#C8C6C6", "#F7F5F2"]}
+				colors={["black", "#100F0F", "#F7F5F2"]}
 				style={{
 					width: "46%",
 					marginVertical: 10,
@@ -171,9 +171,9 @@ const AsicsScreen = ({ route, navigation }) => {
 					></TextInput>
 					<Icon
 						name="cart-outline"
-						size={35}
+						size={30}
 						color="black"
-						style={{ marginRight: 15 }}
+						style={{ marginRight: 15, borderWidth: 1, borderRadius: 5 }}
 						onPress={() => navigation.navigate("Cart")}
 					/>
 				</View>

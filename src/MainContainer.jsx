@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import shoesActions from "../redux/actions/shoesActions";
+import Icon from "react-native-vector-icons/Ionicons";
 import { View, Text, TouchableOpacity } from "react-native";
 
 //Stack Screens
@@ -14,6 +15,7 @@ import HomeStackScreen from "./stackScreens/HomeStackScreen";
 import LogInStackScreen from "./stackScreens/LogInStackScreen";
 import ShopStackScreen from "./stackScreens/ShopStackScreen";
 import AboutUsStackScreen from "./stackScreens/AboutStackScreen";
+import CartStackScreen from "./stackScreens/CartStackScreen";
 
 // //Screen names
 
@@ -60,12 +62,15 @@ const MainContainer = () => {
 							iconName = "user";
 						} else if (route.name === "AboutUs") {
 							iconName = "info";
+						} else if (route.name === "MyCart") {
+							iconName = "cart-outline";
+							return <Icon name={iconName} size={25} color={"black"} />;
 						}
 						return (
-							<FontAwesome5 name={iconName} size={20} color={"red"} />
+							<FontAwesome5 name={iconName} size={20} color={"black"} />
 						);
 					},
-					tabBarActiveTintColor: "#F05454", //color iconos activado
+					tabBarActiveTintColor: "grey", //color iconos activado
 					tabBarInactiveTintColor: "black", //color iconos desactivado
 				})}
 			>
@@ -81,6 +86,12 @@ const MainContainer = () => {
 					component={ShopStackScreen}
 					options={{ headerShown: false }}
 				/>
+				<Tab.Screen
+					name={"MyCart"}
+					component={CartStackScreen}
+					options={{ headerShown: false }}
+				/>
+
 				<Tab.Screen
 					name={"AboutUs"}
 					options={{ headerShown: false }}
