@@ -29,30 +29,15 @@ const ShopScreen = ({ navigation }) => {
 	const shoes = useSelector((store) => store.shoesReducer.shoes);
 	console.log(shoes[0].image);
 
-	//REVISAR FUNCION CARRITO
-	const addCarrito = (shoes) => {
-		const product = {
-			image: shoes.image[0],
-			name: shoes.name,
-			price: shoes.price,
-			id: shoes._id,
-			cant: 1,
-		};
-
-		dispatch(shopActions.addToShop(product));
-	};
-
 	const ProductCard = ({ data }) => {
 		return (
 			<LinearGradient
-				colors={["black", "#C8C6C6", "#F7F5F2"]}
+				colors={["black", "#100F0F", "#F7F5F2"]}
 				style={{
 					width: "46%",
 					marginVertical: 10,
-					// borderWidth: 1,
 					height: 230,
 					justifyContent: "center",
-					// alignItems: "center",
 					backgroundColor: "red",
 					borderTopLeftRadius: 20,
 					borderBottomRightRadius: 20,
@@ -167,7 +152,7 @@ const ShopScreen = ({ navigation }) => {
 			{/*INPUT*/}
 			<View
 				style={{
-					height: "10%",
+					height: "9%",
 				}}
 			>
 				<View style={styles.containerInput}>
@@ -193,8 +178,8 @@ const ShopScreen = ({ navigation }) => {
 			<View
 				style={{
 					width: "100%",
-					height: "90%",
-					backgroundColor: "#f5f5f5",
+					height: "91%",
+					backgroundColor: "#F0F0F3",
 				}}
 			>
 				<StatusBar backgroundColor={"#ffffff"} barStyle="dark-content" />
@@ -271,11 +256,11 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	input: {
-		height: 40,
+		height: 35,
 		margin: 12,
 		width: 300,
 		borderWidth: 1,
 		padding: 10,
-		borderRadius: 13,
+		borderRadius: 10,
 	},
 });
