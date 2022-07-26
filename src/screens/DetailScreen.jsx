@@ -17,7 +17,8 @@ import shoesActions from "../../redux/actions/shoesActions";
 import shopActions from "../../redux/actions/shopActions";
 import { useState, useEffect } from "react";
 import Entypo from "react-native-vector-icons/Entypo";
-import Ionicons from "react-native-vector-icons/Ionicons";
+
+import { toast } from "@jamsch/react-native-toastify";
 
 const DetailScreen = ({ navigation, route }) => {
 	const dispatch = useDispatch();
@@ -42,6 +43,9 @@ const DetailScreen = ({ navigation, route }) => {
 		};
 		console.log(product);
 		dispatch(shopActions.addToShop(product));
+		toast.success("You add an amazing 👟! 💃🏼Rock it!🕺🏻", {
+			position: "bottom-left",
+		});
 	};
 
 	const width = Dimensions.get("window").width;
@@ -227,7 +231,7 @@ const DetailScreen = ({ navigation, route }) => {
 				<TouchableOpacity
 					onPress={() => {
 						addCarrito(shoe);
-						navigation.goBack();
+						navigation.navigate("Cart");
 					}}
 					style={{
 						width: "86%",

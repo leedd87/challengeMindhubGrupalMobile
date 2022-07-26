@@ -22,12 +22,26 @@ const Balenciaga = ({ navigation, route }) => {
 	const [input, setInput] = useState("");
 	const dispatch = useDispatch();
 	const [balenciaga, setBalenciaga] = useState();
+	const [filterShoes, setfilterShoes] = useState([]);
 	const { id } = route.params;
 	useEffect(() => {
 		dispatch(shoesActions.getShoesByBrand(id)).then((res) =>
 			setBalenciaga(res.data.response)
 		);
 	}, []);
+
+	useEffect(() => {
+		if (balenciaga?.length > 0) {
+			const filterRender = shoes?.filter(
+				(shoe) =>
+					shoe.name.toLowerCase().startsWith(input.trim().toLowerCase()) ||
+					shoe.brand.name
+						.toLowerCase()
+						.startsWith(input.trim().toLowerCase())
+			);
+			setfilterShoes(filterRender);
+		}
+	}, [input]);
 
 	const ProductCard = ({ data }) => {
 		return (
@@ -194,49 +208,105 @@ const Balenciaga = ({ navigation, route }) => {
 							borderTopLeftRadius: 34,
 						}}
 					>
-						<View
-							style={{
-								flexDirection: "row",
-								alignItems: "center",
-								justifyContent: "space-between",
-							}}
-						>
-							<View
-								style={{ flexDirection: "row", alignItems: "center" }}
-							>
-								<Text
+						{filterShoes.length > 0 ? (
+							<>
+								<View
 									style={{
-										fontSize: 18,
-										color: "#000000",
-										fontWeight: "500",
-										letterSpacing: 1,
+										flexDirection: "row",
+										alignItems: "center",
+										justifyContent: "space-between",
 									}}
 								>
-									Products
-								</Text>
-								<Text
+									<View
+										style={{
+											flexDirection: "row",
+											alignItems: "center",
+										}}
+									>
+										<Text
+											style={{
+												fontSize: 18,
+												color: "#000000",
+												fontWeight: "500",
+												letterSpacing: 1,
+											}}
+										>
+											Products
+										</Text>
+										<Text
+											style={{
+												fontSize: 14,
+												color: "#000000",
+												fontWeight: "400",
+												opacity: 0.5,
+											}}
+										>
+											{filterShoes?.length}
+										</Text>
+									</View>
+								</View>
+								<View
 									style={{
-										fontSize: 14,
-										color: "#000000",
-										fontWeight: "400",
-										opacity: 0.5,
+										flexDirection: "row",
+										flexWrap: "wrap",
+										justifyContent: "space-around",
 									}}
 								>
-									{balenciaga?.length}
-								</Text>
-							</View>
-						</View>
-						<View
-							style={{
-								flexDirection: "row",
-								flexWrap: "wrap",
-								justifyContent: "space-around",
-							}}
-						>
-							{balenciaga?.map((data) => {
-								return <ProductCard data={data} key={data._id} />;
-							})}
-						</View>
+									{filterShoes?.map((data) => {
+										return <ProductCard data={data} key={data._id} />;
+									})}
+								</View>
+							</>
+						) : (
+							<>
+								<View
+									style={{
+										flexDirection: "row",
+										alignItems: "center",
+										justifyContent: "space-between",
+									}}
+								>
+									<View
+										style={{
+											flexDirection: "row",
+											alignItems: "center",
+										}}
+									>
+										<Text
+											style={{
+												fontSize: 18,
+												color: "#000000",
+												fontWeight: "500",
+												letterSpacing: 1,
+											}}
+										>
+											Products
+										</Text>
+										<Text
+											style={{
+												fontSize: 14,
+												color: "#000000",
+												fontWeight: "400",
+												opacity: 0.5,
+											}}
+										>
+											{balenciaga?.length}
+										</Text>
+									</View>
+								</View>
+								<View
+									style={{
+										flexDirection: "row",
+										flexWrap: "wrap",
+										justifyContent: "space-around",
+									}}
+								>
+									{balenciaga?.map((data) => {
+										return <ProductCard data={data} key={data._id} />;
+									})}
+								</View>
+							</>
+						)}
 					</View>
 				</ScrollView>
 			</View>

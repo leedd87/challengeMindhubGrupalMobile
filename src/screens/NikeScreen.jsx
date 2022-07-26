@@ -22,6 +22,7 @@ const NikeScreen = ({ navigation, route }) => {
 	const [input, setInput] = useState("");
 	const dispatch = useDispatch();
 	const [nike, setNike] = useState();
+	const [filterShoes, setfilterShoes] = useState([]);
 	const { id } = route.params;
 
 	useEffect(() => {
@@ -29,6 +30,19 @@ const NikeScreen = ({ navigation, route }) => {
 			setNike(res.data.response)
 		);
 	}, []);
+
+	useEffect(() => {
+		if (nike?.length > 0) {
+			const filterRender = shoes?.filter(
+				(shoe) =>
+					shoe.name.toLowerCase().startsWith(input.trim().toLowerCase()) ||
+					shoe.brand.name
+						.toLowerCase()
+						.startsWith(input.trim().toLowerCase())
+			);
+			setfilterShoes(filterRender);
+		}
+	}, [input]);
 
 	const ProductCard = ({ data }) => {
 		return (
@@ -223,7 +237,7 @@ const NikeScreen = ({ navigation, route }) => {
 										opacity: 0.5,
 									}}
 								>
-									{nike?.length}
+									{filterShoes?.length}
 								</Text>
 							</View>
 						</View>
@@ -234,7 +248,7 @@ const NikeScreen = ({ navigation, route }) => {
 								justifyContent: "space-around",
 							}}
 						>
-							{nike?.map((data) => {
+							{filterShoes?.map((data) => {
 								return <ProductCard data={data} key={data._id} />;
 							})}
 						</View>

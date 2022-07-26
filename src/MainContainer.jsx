@@ -3,11 +3,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import shoesActions from "../redux/actions/shoesActions";
 import Icon from "react-native-vector-icons/Ionicons";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 
 //Stack Screens
 
@@ -32,6 +32,8 @@ const MainContainer = () => {
 		getData();
 		//eslint-disable-next-line
 	}, []);
+
+	const cart = useSelector((store) => store.shopReducer.productsInShop);
 
 	const getData = async () => {
 		try {
@@ -64,7 +66,17 @@ const MainContainer = () => {
 							iconName = "info";
 						} else if (route.name === "MyCart") {
 							iconName = "cart-outline";
-							return <Icon name={iconName} size={25} color={"black"} />;
+							return (
+								<View
+									style={{
+										flexDirection: "row",
+										alignItems: "center",
+									}}
+								>
+									<Icon name={iconName} size={25} color={"black"} />
+									<Text>{cart.length}</Text>
+								</View>
+							);
 						}
 						return (
 							<FontAwesome5 name={iconName} size={20} color={"black"} />

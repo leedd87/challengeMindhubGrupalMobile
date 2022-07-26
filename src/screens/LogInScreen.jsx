@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 const image = {
-	uri: "https://i.pinimg.com/736x/2c/30/52/2c305213333938d448a03bdd51231549.jpg",
+	uri: "https://images-ext-2.discordapp.net/external/yQUtXfDnt7rdIUA7HVM22DctCtkdW0gtbs2xk74HTjM/%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D735%26q%3D80/https/images.unsplash.com/photo-1512374382149-233c42b6a83b?width=690&height=920",
 };
 
 const LogInScreen = ({ navigation }) => {
@@ -57,7 +57,7 @@ const LogInScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
-						borderWidth: 2,
+						borderWidth: 1,
 						borderColor: "black",
 					}}
 				/>
@@ -73,7 +73,7 @@ const LogInScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
-						borderWidth: 2,
+						borderWidth: 1,
 						borderColor: "black",
 					}}
 				/>

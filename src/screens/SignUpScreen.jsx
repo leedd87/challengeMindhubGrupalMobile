@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 const image = {
-	uri: "https://cdn.statically.io/img/i.pinimg.com/originals/7a/43/57/7a4357cffe778ebf947c13c0df8a4391.jpg",
+	uri: "https://images-ext-2.discordapp.net/external/bJCh4XXzByjWVzvWBJstjmZJ_4D1qbBHvq5qVzBNFGk/http/imgfz.com/i/6VSyuvZ.png",
 };
 
 const SignUpScreen = ({ navigation }) => {
@@ -40,7 +40,7 @@ const SignUpScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
-						borderWidth: 2,
+						borderWidth: 1,
 						borderColor: "black",
 					}}
 				/>
@@ -55,7 +55,7 @@ const SignUpScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
-						borderWidth: 2,
+						borderWidth: 1,
 						borderColor: "black",
 					}}
 				/>
@@ -70,7 +70,7 @@ const SignUpScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
-						borderWidth: 2,
+						borderWidth: 1,
 						borderColor: "black",
 					}}
 				/>
@@ -86,7 +86,7 @@ const SignUpScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
-						borderWidth: 2,
+						borderWidth: 1,
 						borderColor: "black",
 					}}
 				/>
@@ -102,7 +102,7 @@ const SignUpScreen = ({ navigation }) => {
 						padding: 10,
 						margin: 20,
 						borderRadius: 10,
-						borderWidth: 2,
+						borderWidth: 1,
 						borderColor: "black",
 					}}
 				/>

@@ -20,6 +20,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const ShopScreen = ({ navigation }) => {
 	const [input, setInput] = useState("");
+	const [filterShoes, setfilterShoes] = useState([]);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -28,6 +29,19 @@ const ShopScreen = ({ navigation }) => {
 
 	const shoes = useSelector((store) => store.shoesReducer.shoes);
 	console.log(shoes[0].image);
+
+	useEffect(() => {
+		if (shoes?.length > 0) {
+			const filterRender = shoes?.filter(
+				(shoe) =>
+					shoe.name.toLowerCase().startsWith(input.trim().toLowerCase()) ||
+					shoe.brand.name
+						.toLowerCase()
+						.startsWith(input.trim().toLowerCase())
+			);
+			setfilterShoes(filterRender);
+		}
+	}, [input]);
 
 	const ProductCard = ({ data }) => {
 		return (
@@ -183,7 +197,7 @@ const ShopScreen = ({ navigation }) => {
 				}}
 			>
 				<StatusBar backgroundColor={"#ffffff"} barStyle="dark-content" />
-				<ScrollView showVerticalScrollIndicator={false}>
+				<ScrollView showsVerticalScrollIndicator={false} bounces={false}>
 					<View
 						style={{
 							padding: 16,
@@ -231,7 +245,7 @@ const ShopScreen = ({ navigation }) => {
 								justifyContent: "space-around",
 							}}
 						>
-							{shoes?.map((data) => {
+							{filterShoes?.map((data) => {
 								return <ProductCard data={data} key={data._id} />;
 							})}
 						</View>

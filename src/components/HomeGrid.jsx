@@ -37,7 +37,7 @@ const nikeShoesSeven =
 
 const HomeGrid = () => {
 	return (
-		<ScrollView>
+		<ScrollView showsVerticalScrollIndicator={false}>
 			<View style={{ flexDirection: "row" }}>
 				<View
 					style={{
