@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Text, Image } from "react-native";
 import React from "react";
 import CartScreen from "../screens/CartScreen";
 import HomeScreen from "../screens/HomeScreen";
@@ -19,7 +20,12 @@ import DetailScreen from "../screens/DetailScreen";
 const HomeStack = createNativeStackNavigator();
 const HomeStackScreen = () => {
 	return (
-		<HomeStack.Navigator>
+		<HomeStack.Navigator
+			screenOptions={{
+				headerStyle: { backgroundColor: "black" },
+				headerTintColor: "white",
+			}}
+		>
 			<HomeStack.Screen name="DAFTLAB" component={HomeScreen} />
 			<HomeStack.Screen name="Shop" component={ShopScreen} />
 			<HomeStack.Screen name="Cart" component={CartScreen} />

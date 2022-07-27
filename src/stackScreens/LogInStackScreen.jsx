@@ -8,7 +8,12 @@ import HomeScreen from "../screens/HomeScreen";
 const LogInStack = createNativeStackNavigator();
 const LogInStackScreen = () => {
 	return (
-		<LogInStack.Navigator>
+		<LogInStack.Navigator
+			screenOptions={{
+				headerStyle: { backgroundColor: "black" },
+				headerTintColor: "white",
+			}}
+		>
 			<LogInStack.Screen name="Log In" component={LogInScreen} />
 			<LogInStack.Screen name="SignUp" component={SignUpScreen} />
 		</LogInStack.Navigator>

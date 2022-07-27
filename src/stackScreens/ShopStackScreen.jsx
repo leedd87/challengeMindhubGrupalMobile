@@ -7,7 +7,12 @@ import CartScreen from "../screens/CartScreen";
 const ShopStack = createNativeStackNavigator();
 const ShopStackScreen = () => {
 	return (
-		<ShopStack.Navigator>
+		<ShopStack.Navigator
+			screenOptions={{
+				headerStyle: { backgroundColor: "black" },
+				headerTintColor: "white",
+			}}
+		>
 			<ShopStack.Screen name="Shop" component={ShopScreen} />
 			<ShopStack.Screen name="Detail" component={DetailScreen} />
 			<ShopStack.Screen name="Cart" component={CartScreen} />

@@ -6,7 +6,12 @@ import CartScreen from "../screens/CartScreen";
 const CartStack = createNativeStackNavigator();
 const CartStackScreen = () => {
 	return (
-		<CartStack.Navigator>
+		<CartStack.Navigator
+			screenOptions={{
+				headerStyle: { backgroundColor: "black" },
+				headerTintColor: "white",
+			}}
+		>
 			<CartStack.Screen name="Cart" component={CartScreen} />
 		</CartStack.Navigator>
 	);

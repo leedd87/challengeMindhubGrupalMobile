@@ -8,6 +8,7 @@ import {
 	TextInput,
 	TouchableOpacity,
 	StatusBar,
+	KeyboardAvoidingView,
 } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -33,12 +34,13 @@ const AsicsScreen = ({ route, navigation }) => {
 
 	useEffect(() => {
 		if (asics?.length > 0) {
-			const filterRender = shoes?.filter(
+			const filterRender = asics?.filter(
 				(shoe) =>
-					shoe.name.toLowerCase().startsWith(input.trim().toLowerCase()) ||
+					shoe.name.toLowerCase().includes(input.trim().toLowerCase()) ||
 					shoe.brand.name
 						.toLowerCase()
-						.startsWith(input.trim().toLowerCase())
+						.includes(input.trim().toLowerCase()) ||
+					shoe.type.name.toLowerCase().includes(input.trim().toLowerCase())
 			);
 			setfilterShoes(filterRender);
 		}
@@ -47,7 +49,11 @@ const AsicsScreen = ({ route, navigation }) => {
 	const ProductCard = ({ data }) => {
 		return (
 			<LinearGradient
-				colors={["black", "#100F0F", "#F7F5F2"]}
+				colors={[
+					"rgba(255, 255, 255, 0.3)",
+					"rgba(255, 255, 255, 0.6)",
+					"rgba(28,20,56,1)",
+				]}
 				style={{
 					width: "46%",
 					marginVertical: 10,
@@ -165,153 +171,168 @@ const AsicsScreen = ({ route, navigation }) => {
 	};
 
 	return (
-		<SafeAreaView>
-			{/*INPUT*/}
-			<View
-				style={{
-					height: "9%",
-				}}
-			>
-				<View style={styles.containerInput}>
-					<TextInput
-						style={styles.input}
-						onChangeText={(text) => {
-							setInput(text);
-							console.log(text);
-						}}
-						value={input}
-						placeholder={"Search"}
-						keyboardType="default"
-					></TextInput>
-					<Icon
-						name="cart-outline"
-						size={30}
-						color="black"
-						style={{ marginRight: 15, borderWidth: 1, borderRadius: 5 }}
-						onPress={() => navigation.navigate("Cart")}
-					/>
-				</View>
-			</View>
-			<View
-				style={{
-					width: "100%",
-					height: "91%",
-					backgroundColor: "#f5f5f5",
-				}}
-			>
-				<StatusBar backgroundColor={"#ffffff"} barStyle="dark-content" />
-				<ScrollView showVerticalScrollIndicator={false}>
-					<View
-						style={{
-							padding: 16,
-							backgroundColor: "white",
-							borderTopRightRadius: 34,
-							borderTopLeftRadius: 34,
-						}}
-					>
-						{filterShoes.length > 0 ? (
-							<>
-								<View
-									style={{
-										flexDirection: "row",
-										alignItems: "center",
-										justifyContent: "space-between",
-									}}
-								>
-									<View
-										style={{
-											flexDirection: "row",
-											alignItems: "center",
-										}}
-									>
-										<Text
-											style={{
-												fontSize: 18,
-												color: "#000000",
-												fontWeight: "500",
-												letterSpacing: 1,
-											}}
-										>
-											Products
-										</Text>
-										<Text
-											style={{
-												fontSize: 14,
-												color: "#000000",
-												fontWeight: "400",
-												opacity: 0.5,
-											}}
-										>
-											{filterShoes?.length}
-										</Text>
-									</View>
-								</View>
-								<View
-									style={{
-										flexDirection: "row",
-										flexWrap: "wrap",
-										justifyContent: "space-around",
-									}}
-								>
-									{filterShoes?.map((data) => {
-										return <ProductCard data={data} key={data._id} />;
-									})}
-								</View>
-							</>
-						) : (
-							<>
-								<View
-									style={{
-										flexDirection: "row",
-										alignItems: "center",
-										justifyContent: "space-between",
-									}}
-								>
-									<View
-										style={{
-											flexDirection: "row",
-											alignItems: "center",
-										}}
-									>
-										<Text
-											style={{
-												fontSize: 18,
-												color: "#000000",
-												fontWeight: "500",
-												letterSpacing: 1,
-											}}
-										>
-											Products
-										</Text>
-										<Text
-											style={{
-												fontSize: 14,
-												color: "#000000",
-												fontWeight: "400",
-												opacity: 0.5,
-											}}
-										>
-											{asics?.length}
-										</Text>
-									</View>
-								</View>
-								<View
-									style={{
-										flexDirection: "row",
-										flexWrap: "wrap",
-										justifyContent: "space-around",
-									}}
-								>
-									{asics?.map((data) => {
-										return <ProductCard data={data} key={data._id} />;
-									})}
-								</View>
-							</>
-						)}
+		<KeyboardAvoidingView
+			style={{ flex: 1, justifyContent: "center" }}
+			behavior="padding"
+			enabled
+			keyboardVerticalOffset={50}
+		>
+			<SafeAreaView>
+				{/*INPUT*/}
+				<View
+					style={{
+						height: "11%",
+					}}
+				>
+					<View style={styles.containerInput}>
+						<TextInput
+							style={styles.input}
+							onChangeText={(text) => {
+								setInput(text);
+								console.log(text);
+							}}
+							value={input}
+							placeholder={"Search"}
+							keyboardType="default"
+						></TextInput>
+						<Icon
+							name="cart-outline"
+							size={30}
+							color="black"
+							style={{
+								marginRight: 15,
+								borderWidth: 1,
+								borderRadius: 5,
+							}}
+							onPress={() => navigation.navigate("Cart")}
+						/>
 					</View>
-				</ScrollView>
-			</View>
-		</SafeAreaView>
+				</View>
+				<View
+					style={{
+						width: "100%",
+						height: "89%",
+						backgroundColor: "#f5f5f5",
+					}}
+				>
+					<StatusBar backgroundColor={"#ffffff"} barStyle="dark-content" />
+					<ScrollView showVerticalScrollIndicator={false}>
+						<View
+							style={{
+								padding: 16,
+								backgroundColor: "white",
+								borderTopRightRadius: 34,
+								borderTopLeftRadius: 34,
+							}}
+						>
+							{filterShoes.length > 0 ? (
+								<>
+									<View
+										style={{
+											flexDirection: "row",
+											alignItems: "center",
+											justifyContent: "space-between",
+										}}
+									>
+										<View
+											style={{
+												flexDirection: "row",
+												alignItems: "center",
+											}}
+										>
+											<Text
+												style={{
+													fontSize: 18,
+													color: "#000000",
+													fontWeight: "500",
+													letterSpacing: 1,
+												}}
+											>
+												Products
+											</Text>
+											<Text
+												style={{
+													fontSize: 14,
+													color: "#000000",
+													fontWeight: "400",
+													opacity: 0.5,
+												}}
+											>
+												{filterShoes?.length}
+											</Text>
+										</View>
+									</View>
+									<View
+										style={{
+											flexDirection: "row",
+											flexWrap: "wrap",
+											justifyContent: "space-around",
+										}}
+									>
+										{filterShoes?.map((data) => {
+											return (
+												<ProductCard data={data} key={data._id} />
+											);
+										})}
+									</View>
+								</>
+							) : (
+								<>
+									<View
+										style={{
+											flexDirection: "row",
+											alignItems: "center",
+											justifyContent: "space-between",
+										}}
+									>
+										<View
+											style={{
+												flexDirection: "row",
+												alignItems: "center",
+											}}
+										>
+											<Text
+												style={{
+													fontSize: 18,
+													color: "#000000",
+													fontWeight: "500",
+													letterSpacing: 1,
+												}}
+											>
+												Products
+											</Text>
+											<Text
+												style={{
+													fontSize: 14,
+													color: "#000000",
+													fontWeight: "400",
+													opacity: 0.5,
+												}}
+											>
+												{asics?.length}
+											</Text>
+										</View>
+									</View>
+									<View
+										style={{
+											flexDirection: "row",
+											flexWrap: "wrap",
+											justifyContent: "space-around",
+										}}
+									>
+										{asics?.map((data) => {
+											return (
+												<ProductCard data={data} key={data._id} />
+											);
+										})}
+									</View>
+								</>
+							)}
+						</View>
+					</ScrollView>
+				</View>
+			</SafeAreaView>
+		</KeyboardAvoidingView>
 	);
 };
 
