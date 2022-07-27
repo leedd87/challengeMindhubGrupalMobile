@@ -59,7 +59,7 @@ const AboutUsScreen = () => {
 							height: 200,
 							marginRight: 10,
 							justifyContent: "center",
-							backgroundColor: "black",
+							backgroundColor: "white",
 						}}
 					>
 						{/* <ImageBackground
@@ -70,7 +70,7 @@ const AboutUsScreen = () => {
 						<Text
 							style={{
 								margin: 12,
-								color: "white",
+								color: "black",
 								fontSize: 14,
 								fontFamily: "Poppins",
 							}}
@@ -136,7 +136,7 @@ const AboutUsScreen = () => {
 						style={{
 							width: "70%",
 							height: 200,
-							backgroundColor: "black",
+							backgroundColor: "white",
 							paddingLeft: 10,
 							justifyContent: "center",
 						}}
@@ -149,7 +149,7 @@ const AboutUsScreen = () => {
 						<Text
 							style={{
 								margin: 12,
-								color: "white",
+								color: "black",
 								fontSize: 16,
 								fontFamily: "Poppins",
 							}}
@@ -159,7 +159,7 @@ const AboutUsScreen = () => {
 						<Text
 							style={{
 								margin: 12,
-								color: "white",
+								color: "black",
 								fontSize: 14,
 								fontFamily: "Poppins",
 							}}

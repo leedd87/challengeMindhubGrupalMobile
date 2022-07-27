@@ -219,7 +219,7 @@ const Balenciaga = ({ navigation, route }) => {
 						<View
 							style={{
 								padding: 16,
-								backgroundColor: "white",
+								backgroundColor: "#1363DFE6",
 								borderTopRightRadius: 34,
 								borderTopLeftRadius: 34,
 							}}
