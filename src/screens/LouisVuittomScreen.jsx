@@ -222,8 +222,6 @@ const LouisVuittomScreen = ({ navigation, route }) => {
 							style={{
 								padding: 16,
 								backgroundColor: "#1363DFE6",
-								borderTopRightRadius: 34,
-								borderTopLeftRadius: 34,
 							}}
 						>
 							{filterShoes.length > 0 ? (

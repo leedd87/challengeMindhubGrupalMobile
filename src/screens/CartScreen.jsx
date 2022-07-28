@@ -48,16 +48,6 @@ const CartScreen = ({ navigation }) => {
 		});
 	};
 
-	//CHECKOUT MESSAGE
-	const checkOut = () => {
-		return (
-			navigation.navigate("DAFTLAB"),
-			toast.success("You add an amazing 👟! 💃🏼Rock it!🕺🏻", {
-				position: "bottom-left",
-			})
-		);
-	};
-
 	const renderProducts = (data, index) => {
 		return (
 			<TouchableOpacity
@@ -187,7 +177,12 @@ const CartScreen = ({ navigation }) => {
 							</View>
 						</View>
 						<TouchableOpacity
-							onPress={() => removeToShop(data)}
+							onPress={() => {
+								removeToShop(data);
+								toast.error("You delete a 👟! Hope you find the ONE!", {
+									position: "bottom-left",
+								});
+							}}
 							style={{ overflow: "hidden", borderRadius: 100 }}
 						>
 							<MaterialCommunityIcons
@@ -440,7 +435,6 @@ const CartScreen = ({ navigation }) => {
 					<View style={{ flexDirection: "row" }}>
 						<TouchableOpacity
 							onPress={() => navigation.navigate("Shop")}
-							// onPress={() => (total != 0 ? checkOut() : null)}
 							style={{
 								width: "40%",
 								height: "100%",
@@ -470,7 +464,7 @@ const CartScreen = ({ navigation }) => {
 									toast.success(
 										"Thanks for your purchase 👟! 💃🏼Rock it!🕺🏻",
 										{
-											position: "bottom-left",
+											position: "top-left",
 										}
 									);
 							}}
