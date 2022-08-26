@@ -17,7 +17,7 @@ import ShopStackScreen from "./stackScreens/ShopStackScreen";
 import AboutUsStackScreen from "./stackScreens/AboutStackScreen";
 import CartStackScreen from "./stackScreens/CartStackScreen";
 
-// //Screen names
+//Screen names
 
 const Tab = createBottomTabNavigator();
 

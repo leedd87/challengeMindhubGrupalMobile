@@ -48,7 +48,6 @@ const AboutUsScreen = () => {
 		<View>
 			<ScrollView
 				showsVerticalScrollIndicator={false}
-				// decelerationRate={0.5}
 				style={{ height: "90%" }}
 				bounces={false}
 			>
@@ -62,11 +61,7 @@ const AboutUsScreen = () => {
 							backgroundColor: "white",
 						}}
 					>
-						{/* <ImageBackground
-						source={{ uri: nikeShoesTwo }}
-						resizeMode="cover"
-						style={{ flex: 1 }}
-					></ImageBackground> */}
+		
 						<Text
 							style={{
 								margin: 12,

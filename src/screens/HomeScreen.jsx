@@ -22,7 +22,7 @@ import MaskedView from "@react-native-masked-view/masked-view";
 const height = Dimensions.get("window").height;
 
 const adidasShoes =
-	"https://media.discordapp.net/attachments/998602282113445979/999392011771715644/adidas-removebg-preview.png";
+	"http://imgfz.com/i/0paYjzO.png";
 
 const newBalanceShoes =
 	"https://reactsport.herokuapp.com/img/productImages/shoe_newbalance_01.png";
@@ -124,8 +124,8 @@ const HomeScreen = ({ navigation }) => {
 						<Image
 							source={{ uri: adidasShoes }}
 							style={{
-								width: 200,
-								height: 200,
+								width: 150,
+								height: 150,
 								transform: [{ rotate: "-35deg" }],
 							}}
 						/>
